@@ -100,36 +100,36 @@ public class AcceptChoice : MonoBehaviour {
             Debug.Log(currentTextIndex);
         }
 
-        if (currentTextIndex == 5)
+        if (currentTextIndex == 6 || currentTextIndex == 12 || currentTextIndex == 18)
         {
             //break
             Debug.Log("vijfde statement hier");
             canClickNext = false;
             Debug.Log(canClickNext);
-            this.gameObject.GetComponent<Image>().enabled = false;
-            StartCoroutine(Wait(500));
-            this.gameObject.GetComponent<Image>().enabled = true;
-            canClickNext = true;
+            StartCoroutine(Wait(5));
+            //display text to say that you need to wait
         }
-        // kijk welke catagorie is geklikt
-        // sla de punten op
-        // ga naar de volgende stelling
     }
 
-   /* void OnMouseOver()
-    {
-        overMouse = true;
-    }
+    //void OnMouseOver()
+    //{
+    //    overMouse = true;
+    //}
 
-    private void OnMouseExit()
-    {
-        overMouse = false;
-    }*/
+    //private void OnMouseExit()
+    //{
+    //    overMouse = false;
+    //}
 
     public IEnumerator Wait(float waitTime)
     {
         print("in coroutine");
+        this.gameObject.GetComponent<Image>().enabled = false;
+        this.gameObject.GetComponentInChildren<Text>().enabled = false;
         yield return new WaitForSeconds(waitTime);
         print("beyond coroutine");
+        canClickNext = true;
+        this.gameObject.GetComponentInChildren<Text>().enabled = true;
+        this.gameObject.GetComponent<Image>().enabled = true;
     }
 }
