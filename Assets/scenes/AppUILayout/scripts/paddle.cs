@@ -40,7 +40,7 @@ public class paddle : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            //  canSnap = true;
+              canSnap = true;
               print("knop los");
             SnapToPoint();
         }
