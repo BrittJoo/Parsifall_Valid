@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class AcceptChoice : MonoBehaviour {
-
+    
     public string[] statementText;//= new string[] {"Statement1", "Statement2", "Statement3"};
     public bool overMouse;
     private paddle paddle;
@@ -86,6 +86,7 @@ public class AcceptChoice : MonoBehaviour {
 
    public void ClickingTask()
     {
+        
         if (canClickNext)
         {
             print("op knop geklikt");
@@ -98,6 +99,12 @@ public class AcceptChoice : MonoBehaviour {
             Debug.Log("de currentTextIndex vastgesteld");
             currentTextIndex++;
             Debug.Log(currentTextIndex);
+
+            if (paddle.buttonchoise == 1) {Debug.Log("give a charecter a point"); }
+            if(paddle.buttonchoise ==2){ }
+            if (paddle.buttonchoise == 3) { }
+            if (paddle.buttonchoise == 4) {Debug.Log("je hebt oneens geselecteerd"); }
+
         }
 
         if (currentTextIndex == 6 || currentTextIndex == 12 || currentTextIndex == 18)

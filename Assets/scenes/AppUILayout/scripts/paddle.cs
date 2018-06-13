@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class paddle : MonoBehaviour
 {
-
+    public int buttonchoise = 0;
     public float mouse_pos;
     private bool isdragging;
     private bool canSnap;
@@ -81,21 +81,29 @@ public class paddle : MonoBehaviour
             //point to...
             transform.position = snap1.transform.position;
             print("eensCollider in");
+                ;buttonchoise = 1;
         }
         if (snapPoint == 2)
         {
             //point to...
             transform.position = snap2.transform.position;
+            buttonchoise = 3;
+
         }
         if (snapPoint == 3)
         {
             //point to...
             transform.position = snap3.transform.position;
+            Debug.Log("je zit in de beetjeoneens void");
+        buttonchoise = 4;
+
         }
         if (snapPoint == 4)
         {
             //point to...
             transform.position = snap4.transform.position;
+            buttonchoise = 2;
+
         }
     }
 }
