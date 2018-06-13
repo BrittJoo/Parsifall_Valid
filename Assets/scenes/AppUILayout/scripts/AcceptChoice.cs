@@ -7,7 +7,7 @@ public class AcceptChoice : MonoBehaviour {
 
     public string[] statementText;//= new string[] {"Statement1", "Statement2", "Statement3"};
     public bool overMouse;
-    private paddle paddle;
+    private PaddleController _paddleController;
     public Text StatementTextObject;
   //  List<int> statement = new List<int>();
     int currentStatement;
@@ -32,7 +32,7 @@ public class AcceptChoice : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        paddle = FindObjectOfType<paddle>();
+        _paddleController = FindObjectOfType<PaddleController>();
         int indexChar = character.IndexOf(120);
        // List.IndexOf(character);
 
