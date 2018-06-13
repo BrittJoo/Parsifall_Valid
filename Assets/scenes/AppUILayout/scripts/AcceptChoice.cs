@@ -7,7 +7,7 @@ public class AcceptChoice : MonoBehaviour {
     
     public string[] statementText;//= new string[] {"Statement1", "Statement2", "Statement3"};
     public bool overMouse;
-    private paddle paddle;
+    private PaddleController _paddleController;
     public Text StatementTextObject;
   //  List<int> statement = new List<int>();
     int currentStatement;
@@ -32,7 +32,7 @@ public class AcceptChoice : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        paddle = FindObjectOfType<paddle>();
+        _paddleController = FindObjectOfType<PaddleController>();
         int indexChar = character.IndexOf(120);
        // List.IndexOf(character);
 
@@ -75,28 +75,17 @@ public class AcceptChoice : MonoBehaviour {
         }
         currentStatement = 1;
         lastStatement = 1;
-        // xml, 
     }
 	
-	// Update is called once per frame
-	void Update()
-    {
-       
-    }
 
    public void ClickingTask()
     {
         
         if (canClickNext)
         {
-            print("op knop geklikt");
-            //check which square
             lastStatement = currentStatement;
-            //StatementTextObject set text to array.
             currentStatement++;
             StatementTextObject.text = statementText[currentTextIndex];
-            Debug.Log(statementText[currentTextIndex]);
-            Debug.Log("de currentTextIndex vastgesteld");
             currentTextIndex++;
             Debug.Log(currentTextIndex);
 
@@ -107,34 +96,18 @@ public class AcceptChoice : MonoBehaviour {
 
         }
 
-        if (currentTextIndex == 6 || currentTextIndex == 12 || currentTextIndex == 18)
+        if (currentTextIndex == 5 || currentTextIndex == 11 || currentTextIndex == 18)
         {
-            //break
-            Debug.Log("vijfde statement hier");
             canClickNext = false;
-            Debug.Log(canClickNext);
             StartCoroutine(Wait(5));
-            //display text to say that you need to wait
         }
     }
 
-    //void OnMouseOver()
-    //{
-    //    overMouse = true;
-    //}
-
-    //private void OnMouseExit()
-    //{
-    //    overMouse = false;
-    //}
-
     public IEnumerator Wait(float waitTime)
     {
-        print("in coroutine");
         this.gameObject.GetComponent<Image>().enabled = false;
         this.gameObject.GetComponentInChildren<Text>().enabled = false;
         yield return new WaitForSeconds(waitTime);
-        print("beyond coroutine");
         canClickNext = true;
         this.gameObject.GetComponentInChildren<Text>().enabled = true;
         this.gameObject.GetComponent<Image>().enabled = true;
