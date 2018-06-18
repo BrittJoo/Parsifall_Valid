@@ -16,7 +16,7 @@ public class AcceptChoice : MonoBehaviour {
     int currentTextIndex = 0;
     bool canClickNext = true;
     //  int currentChar;
-    //  int character;
+    paddle pad;  //  int character;
 
     //private var wave1 : List.<String> = new List.<String>();
     // private int waveArray = List.< List.< String > > = new List.< List.< String > > ();
@@ -34,7 +34,8 @@ public class AcceptChoice : MonoBehaviour {
     {
         _paddleController = FindObjectOfType<PaddleController>();
         int indexChar = character.IndexOf(120);
-       // List.IndexOf(character);
+
+        pad = FindObjectOfType<paddle>();// List.IndexOf(character);
 
 
         statement.Add(1);
@@ -89,10 +90,10 @@ public class AcceptChoice : MonoBehaviour {
             currentTextIndex++;
             Debug.Log(currentTextIndex);
 
-            if (paddle.buttonchoise == 1) {Debug.Log("give a charecter a point"); }
-            if(paddle.buttonchoise ==2){ }
-            if (paddle.buttonchoise == 3) { }
-            if (paddle.buttonchoise == 4) {Debug.Log("je hebt oneens geselecteerd"); }
+            if (pad.buttonchoise == 1) {Debug.Log("give a charecter a point"); }
+            if(pad.buttonchoise ==2){ }
+            if (pad.buttonchoise == 3) { }
+            if (pad.buttonchoise == 4) {Debug.Log("je hebt oneens geselecteerd"); }
 
         }
 
