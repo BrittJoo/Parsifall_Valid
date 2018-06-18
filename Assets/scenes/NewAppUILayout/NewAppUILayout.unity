@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!29 &1
@@ -1970,3 +1971,4 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b31a06256743a3f4a8e03dbf12e4a215, type: 2}
   m_IsPrefabParent: 0
+>>>>>>> b39fce28782726f65f71a82dd3bdb06bebdf88d0
