@@ -1,11 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Parsifall
-{
-}
-
-
 public class PaddleController : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
 
