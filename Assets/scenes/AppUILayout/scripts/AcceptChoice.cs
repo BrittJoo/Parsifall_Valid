@@ -15,6 +15,8 @@ public class AcceptChoice : MonoBehaviour {
     int snapPoint;
     int currentTextIndex = 0;
     bool canClickNext = true;
+
+    private paddle paddle;
     //  int currentChar;
     //  int character;
 
