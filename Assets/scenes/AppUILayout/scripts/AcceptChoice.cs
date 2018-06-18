@@ -9,6 +9,8 @@ public class AcceptChoice : MonoBehaviour {
     public bool overMouse;
     private PaddleController _paddleController;
     public Text StatementTextObject;
+
+    public Slider swordSlider;
   //  List<int> statement = new List<int>();
     int currentStatement;
     int lastStatement;
@@ -86,15 +88,21 @@ public class AcceptChoice : MonoBehaviour {
         if (canClickNext)
         {
             lastStatement = currentStatement;
-            currentStatement++;
+
             StatementTextObject.text = statementText[currentTextIndex];
             currentTextIndex++;
             Debug.Log(currentTextIndex);
 
-            if (paddle.buttonchoise == 1) {Debug.Log("give a charecter a point"); }
-            if(paddle.buttonchoise ==2){ }
-            if (paddle.buttonchoise == 3) { }
-            if (paddle.buttonchoise == 4) {Debug.Log("je hebt oneens geselecteerd"); }
+            if (swordSlider.value == 0)
+            {
+                Debug.Log("give a charecter a point");
+            }
+
+            if(swordSlider.value == 1){ }
+            if (swordSlider.value == 2) { }
+            if (swordSlider.value == 3) {Debug.Log("je hebt oneens geselecteerd"); }
+
+             currentStatement++;
 
         }
 
